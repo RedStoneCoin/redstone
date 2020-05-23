@@ -4,7 +4,7 @@
 // Please see the included LICENSE file for more information.
 
 #include "serialization/SerializationOverloads.h"
-
+#include <stdexcept>
 #include <limits>
 
 namespace CryptoNote
