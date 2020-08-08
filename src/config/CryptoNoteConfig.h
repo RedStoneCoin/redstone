@@ -274,7 +274,7 @@ namespace CryptoNote
     };
 
     const char *const SEED_NODES[] = {
-        "164.90.212.80:9090"
+        "164.90.212.80:9090",
         "99.248.224.55:9090" // Leo, (helives.mine2.live)// Leo, (helives.mine2.live) new toni do seednode
     };
 } // namespace CryptoNote
