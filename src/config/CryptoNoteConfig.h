@@ -230,8 +230,8 @@ namespace CryptoNote
     //Need to change ports here i will put soemthing 
     //Seednode not working i that why im changeing ports
 
-    const int      P2P_DEFAULT_PORT                          =            9090;//here
-    const int      RPC_DEFAULT_PORT                          =            9999;//here
+    const int      P2P_DEFAULT_PORT                          =           44404; //9090 new port 44404
+    const int      RPC_DEFAULT_PORT                          =             44403; //9999 new port 44403
     const int      SERVICE_DEFAULT_PORT                      =            1010;
 
     const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT            =             1000;
@@ -266,8 +266,8 @@ namespace CryptoNote
     const uint32_t DATABASE_DEFAULT_MAX_OPEN_FILES           =              125; // 125 files
     const uint16_t DATABASE_DEFAULT_BACKGROUND_THREADS_COUNT =                4; // 4 DB threads
 
-    const char        LATEST_VERSION_URL[] =     "https://github.com/redstone-project/redstone/releases/latest";
-    const std::string LICENSE_URL          = "https://github.com/redstone-project/redstone/blob/master/LICENSE";
+    const char        LATEST_VERSION_URL[] =     "https://github.com/RedStoneCoin/redstone/releases";
+    const std::string LICENSE_URL          = "https://github.com/RedStoneCoin/redstone/blob/development/LICENSE";
 
     const static boost::uuids::uuid CRYPTONOTE_NETWORK = {
         {
