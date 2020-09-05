@@ -198,7 +198,7 @@ namespace CryptoNote
     } // namespace parameters
 
     const char     CRYPTONOTE_NAME[]           =              "Redstones";
-    const char     DATADIR_NAME[]              =             "redstones_dir";
+    const char     DATADIR_NAME[]              =             "Redstones_data_dir";
 
     const uint8_t  TRANSACTION_VERSION_1       =                     1;
     const uint8_t  TRANSACTION_VERSION_2       =                     2;
