@@ -198,7 +198,7 @@ namespace CryptoNote
     } // namespace parameters
 
     const char     CRYPTONOTE_NAME[]           =              "Redstones";
-    const char     DATADIR_NAME[]              =             "Redstones_data_dir";
+    const char     DATADIR_NAME[]              =              "Redstones_data_dir";
 
     const uint8_t  TRANSACTION_VERSION_1       =                     1;
     const uint8_t  TRANSACTION_VERSION_2       =                     2;
@@ -276,8 +276,8 @@ namespace CryptoNote
     };
 //needed to change port on seed nodes defouth
     const char *const SEED_NODES[] = {
-        "164.90.212.80:44404",
-        "99.248.224.55:44404" //leo
-        "46.101.195.41:44404" //telecar   // Leo, (helives.mine2.live)// Leo, (helives.mine2.live) new toni do seednode
+        //"164.90.212.80:44404"
+        //"99.248.224.55:44404" //leo
+        "46.101.195.41:44404", //telecar   // Leo, (helives.mine2.live)// Leo, (helives.mine2.live) new toni do seednode
     };
 } // namespace CryptoNote
