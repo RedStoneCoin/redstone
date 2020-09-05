@@ -266,18 +266,18 @@ namespace CryptoNote
     const uint32_t DATABASE_DEFAULT_MAX_OPEN_FILES           =              125; // 125 files
     const uint16_t DATABASE_DEFAULT_BACKGROUND_THREADS_COUNT =                4; // 4 DB threads
 
-    const char        LATEST_VERSION_URL[] =     "https://github.com/RedStoneCoin/redstone/releases";
-    const std::string LICENSE_URL          = "https://github.com/RedStoneCoin/redstone/blob/development/LICENSE";
+    const char        LATEST_VERSION_URL[] =     "https:/red-stone.me";
+    const std::string LICENSE_URL          =     "https:/red-stone.me";
 
     const static boost::uuids::uuid CRYPTONOTE_NETWORK = {
         {
             0x7a, 0x4f, 0xed, 0xa6, 0x77, 0xf2, 0xab, 0x9a, 0x7e, 0x3b, 0xb3, 0xa8, 0xe8, 0xa1, 0xc4, 0xf7
         }
     };
-
+//needed to change port on seed nodes defouth
     const char *const SEED_NODES[] = {
-        "164.90.212.80:9090",
-        "99.248.224.55:9090" //leo
-        "46.101.195.41:9099" //telecar   // Leo, (helives.mine2.live)// Leo, (helives.mine2.live) new toni do seednode
+        "164.90.212.80:44404",
+        "99.248.224.55:44404" //leo
+        "46.101.195.41:44404" //telecar   // Leo, (helives.mine2.live)// Leo, (helives.mine2.live) new toni do seednode
     };
 } // namespace CryptoNote
