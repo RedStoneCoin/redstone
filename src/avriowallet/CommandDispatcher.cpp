@@ -154,10 +154,7 @@ bool handleCommand(
         swapNode(walletBackend);
     }
     else if (command == "copy")
-        int main(){
-        std::cout << "Hello World!";
-        return 0;
-        }
+        throw std::("soon");
     }    
     /* This should never happen */
     else
