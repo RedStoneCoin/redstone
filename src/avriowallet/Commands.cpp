@@ -36,6 +36,7 @@ std::vector<AdvancedCommand> allCommands()
     return {
         /* Basic commands */
         AdvancedCommand("advanced", "List available advanced commands", true, false),
+        AdvancedCommand("Copy", "Copy addr", true, false),
         AdvancedCommand("address", "Display your payment address", true, false),
         AdvancedCommand("balance", "Display how much " + WalletConfig::ticker + " you have", true, false),
         AdvancedCommand("backup", "Backup your private keys and/or seed", true, false),
