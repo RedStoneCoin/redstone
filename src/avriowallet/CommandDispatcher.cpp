@@ -29,7 +29,7 @@ bool handleCommand(
     if (command == "advanced")
     {
     
-    if (command == "Copy")
+    if (command == "copy")
     {
         advanced(walletBackend);
     }
@@ -154,9 +154,12 @@ bool handleCommand(
     {
         swapNode(walletBackend);
     }
-    else if (command == "Copy")
+    else if (command == "copy")
     {
-        std::cout << "Comeing soon!";
+        int main() {
+        std::cout << "Hello World!";
+        return 0;
+      }
     }    
     /* This should never happen */
     else
