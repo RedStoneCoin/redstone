@@ -28,11 +28,10 @@ bool handleCommand(
     /* Basic commands */
     if (command == "advanced")
     {
-    
-    if (command == "copy")
-    {
         advanced(walletBackend);
     }
+    if (command == "copy")
+    {
     else if (command == "address")
     {
         std::cout << SuccessMsg(walletBackend->getPrimaryAddress()) << std::endl;
@@ -155,8 +154,6 @@ bool handleCommand(
         swapNode(walletBackend);
     }
     else if (command == "copy")
-        
-    {
         int main(){
         std::cout << "Hello World!";
         return 0;
