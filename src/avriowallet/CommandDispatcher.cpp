@@ -153,8 +153,7 @@ bool handleCommand(
     {
         swapNode(walletBackend);
     }
-    else if (command == "copy")
-        throw std::("soon");
+   
     }    
     /* This should never happen */
     else
