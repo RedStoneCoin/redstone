@@ -1,5 +1,5 @@
 // Copyright (c) 2018-2019, The TurtleCoin Developers
-//
+//1
 // Please see the included LICENSE file for more information.
 
 //////////////////////////////////////////
@@ -30,8 +30,6 @@ bool handleCommand(
     {
         advanced(walletBackend);
     }
-    if (command == "copy")
-    {
     else if (command == "address")
     {
         std::cout << SuccessMsg(walletBackend->getPrimaryAddress()) << std::endl;
@@ -153,8 +151,6 @@ bool handleCommand(
     {
         swapNode(walletBackend);
     }
-   
-    }    
     /* This should never happen */
     else
     {
