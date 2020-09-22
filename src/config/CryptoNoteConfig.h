@@ -230,8 +230,8 @@ namespace CryptoNote
     //Need to change ports here i will put soemthing 
     //Seednode not working i that why im changeing ports
 
-    const int      P2P_DEFAULT_PORT                          =           44404; //9090 new port 44404
-    const int      RPC_DEFAULT_PORT                          =           44403; //9999 new port 44403
+    const int      P2P_DEFAULT_PORT                          =           44405; //9090 new port 44404
+    const int      RPC_DEFAULT_PORT                          =           44404; //9999 new port 44403
     const int      SERVICE_DEFAULT_PORT                      =            1010;
 
     const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT            =             1000;
