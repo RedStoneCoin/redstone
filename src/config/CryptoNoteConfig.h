@@ -198,7 +198,7 @@ namespace CryptoNote
     } // namespace parameters
 
     const char     CRYPTONOTE_NAME[]           =              "Redstones";
-    const char     DATADIR_NAME[]              =              "Redstones_data_dir";
+    const char     DATADIR_NAME[]              =              "Redstones_db";
 
     const uint8_t  TRANSACTION_VERSION_1       =                     1;
     const uint8_t  TRANSACTION_VERSION_2       =                     2;
@@ -230,8 +230,8 @@ namespace CryptoNote
     //Need to change ports here i will put soemthing 
     //Seednode not working i that why im changeing ports
 
-    const int      P2P_DEFAULT_PORT                          =           44405; //9090 new port 44404
-    const int      RPC_DEFAULT_PORT                          =           44404; //9999 new port 44403
+    const int      P2P_DEFAULT_PORT                          =           44406; //9090 new port 44404
+    const int      RPC_DEFAULT_PORT                          =           44407; //9999 new port 44403
     const int      SERVICE_DEFAULT_PORT                      =            1010;
 
     const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT            =             1000;
