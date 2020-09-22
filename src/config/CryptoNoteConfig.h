@@ -230,8 +230,8 @@ namespace CryptoNote
     //Need to change ports here i will put soemthing 
     //Seednode not working i that why im changeing ports
 
-    const int      P2P_DEFAULT_PORT                          =           44406; //9090 new port 44404
-    const int      RPC_DEFAULT_PORT                          =           44407; //9999 new port 44403
+    const int      P2P_DEFAULT_PORT                          =           44401; //9090 new port 44404
+    const int      RPC_DEFAULT_PORT                          =           44402; //9999 new port 44403
     const int      SERVICE_DEFAULT_PORT                      =            1010;
 
     const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT            =             1000;
@@ -278,6 +278,6 @@ namespace CryptoNote
     const char *const SEED_NODES[] = {
         //"164.90.212.80:44404"
         //"99.248.224.55:44404" //leo
-        "46.101.195.41:44404", //telecar   // Leo, (helives.mine2.live)// Leo, (helives.mine2.live) new toni do seednode
+        "46.101.195.41:44401", //telecar   // Leo, (helives.mine2.live)// Leo, (helives.mine2.live) new toni do seednode
     };
 } // namespace CryptoNote
