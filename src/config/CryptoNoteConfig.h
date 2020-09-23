@@ -227,12 +227,14 @@ namespace CryptoNote
     const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT    =            10000; // by default, blocks ids count in synchronizing
     const uint64_t BLOCKS_SYNCHRONIZING_DEFAULT_COUNT        =              100; // by default, blocks count in blocks downloading
     const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT     =             1000;
+   
     //Need to change ports here i will put soemthing 
     //Seednode not working i that why im changeing ports
 
-    const int      P2P_DEFAULT_PORT                          =           44401; //9090 new port 44404
-    const int      RPC_DEFAULT_PORT                          =           44402; //9999 new port 44403
-    const int      SERVICE_DEFAULT_PORT                      =            1010;
+    const int      P2P_DEFAULT_PORT                          =            44401; //9090 new port 44404
+    const int      RPC_DEFAULT_PORT                          =            44402; //9999 new port 44403
+                                                                              
+    const int      SERVICE_DEFAULT_PORT                      =             1010;
 
     const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT            =             1000;
     const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT             =             5000;
