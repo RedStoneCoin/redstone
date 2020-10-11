@@ -34,6 +34,10 @@ bool handleCommand(
     {
         std::cout << SuccessMsg(walletBackend->getPrimaryAddress()) << std::endl;
     }
+    else if (command == "Copy")
+    {
+        std::cout <<  walletBackend->getPrimaryAddress() << "Done" << std::endl;
+    }
     else if (command == "balance")
     {
         balance(walletBackend);
