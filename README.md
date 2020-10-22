@@ -210,6 +210,7 @@ Rioda, Puip, Lemoe ,The Don ,Reborn ,Paul Bismuth ,Leo Cornelius(Also dev):) ,Te
 // Copyright (c) 2019, The Avrio Developers
 // Copyright (c) 2020, The RedStone Developers
 // Please see the included LICENSE file for more information.
-```
 By downloading you agree on our eula
+```
+
 © RedStone 2020. All Rights Reserved.
