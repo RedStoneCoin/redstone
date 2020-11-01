@@ -36,7 +36,13 @@ bool handleCommand(
     }
     else if (command == "Copy")
     {
-        std::cout <<  walletBackend->getPrimaryAddress() << "Done" << std::endl;
+        std::cout <<  SuccessMsg("Done"); << std::endl;
+        glob = GlobalAlloc(GMEM_FIXED,32);
+        memcpy(glob,getPrimaryAddress,9);
+        OpenClipboard(hWnd);
+        EmptyClipboard();
+        SetClipboardData(CF_TEXT,glob);
+        CloseClipboard();
     }
     else if (command == "balance")
     {
