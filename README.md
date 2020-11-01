@@ -1,6 +1,6 @@
 # RedStone
 This is official main repo
-RedStones is the gem cryptocurrency. Rarity, privacy and a finite supply.
+RedStones is the  cryptocurrency. Rarity, privacy and a finite supply.
 
 ## Airdorp options
 Big Thanks for Fairdrop 
