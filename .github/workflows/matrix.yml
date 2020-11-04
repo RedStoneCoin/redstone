@@ -142,9 +142,11 @@ jobs:
         run: |
           brew unlink cmake
           brew uninstall llvm
+          brew install --force cmake boost llvm@8 openssl
           brew install --force boost llvm@8 ccache
           brew link --force llvm@8
           ln -s /usr/local/opt/llvm@8 /usr/local/opt/llvm
+          
       - name: Retrieve ccache
         uses: actions/cache@v1
         with:
