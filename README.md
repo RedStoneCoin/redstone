@@ -1,4 +1,6 @@
-# RedStone
+# this is condept page do not downlaod anything developer only!!!!!
+
+RedStone
 This is official main repo
 RedStones is the  cryptocurrency. Rarity, privacy and a finite supply.
 
