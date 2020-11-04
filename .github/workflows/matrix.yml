@@ -140,6 +140,7 @@ jobs:
       # Fetch Dependencies
       - name: Dependencies
         run: |
+          brew unlink cmake
           brew uninstall llvm
           brew install --force boost llvm@8 ccache
           brew link --force llvm@8
