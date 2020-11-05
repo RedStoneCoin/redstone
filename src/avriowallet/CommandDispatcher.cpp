@@ -1,5 +1,6 @@
+  
 // Copyright (c) 2018-2019, The TurtleCoin Developers
-//1
+//
 // Please see the included LICENSE file for more information.
 
 //////////////////////////////////////////
@@ -33,8 +34,6 @@ bool handleCommand(
     else if (command == "address")
     {
         std::cout << SuccessMsg(walletBackend->getPrimaryAddress()) << std::endl;
-    }
-    
     }
     else if (command == "balance")
     {
