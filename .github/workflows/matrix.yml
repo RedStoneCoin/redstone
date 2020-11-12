@@ -206,6 +206,15 @@ jobs:
       MSBUILD_PATH: "C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/MSBuild/Current/Bin"
       LABEL: windows
     steps:
+      - name:  Boost
+        run: |
+          #cmd
+          set BOOST_ROOT=%BOOST_ROOT_1_72_0%
+          $powershell
+          $env:BOOST_ROOT=$env:BOOST_ROOT_1_72_0
+          
+        shell: cmd
+
       - uses: actions/checkout@v2
 
       - name: Setup clcache
