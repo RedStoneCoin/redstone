@@ -216,6 +216,8 @@ jobs:
     
 
       - uses: actions/checkout@v2
+      - name: Install Boost
+        run: choco install boost-msvc-14.1
 
       - name: Setup clcache
         run: pip install clcache
