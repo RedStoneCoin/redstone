@@ -68,10 +68,10 @@ namespace CryptoNote
         const uint64_t MINIMUM_FEE                                       =                             UINT64_C(1); // "basicly" feeless
         /* This section defines our minimum and maximum mixin counts required for transactions */
         const uint64_t MINIMUM_MIXIN_V1                        =                                      0;
-        const uint64_t MAXIMUM_MIXIN_V1                        =                                     1000;
+        const uint64_t MAXIMUM_MIXIN_V1                        =                                     100;
 
-        const uint64_t MINIMUM_MIXIN_V2                        =                                      0;
-        const uint64_t MAXIMUM_MIXIN_V2                        =                                      5;
+        const uint64_t MINIMUM_MIXIN_V2                        =                                      7;
+        const uint64_t MAXIMUM_MIXIN_V2                        =                                      7;
 
         const uint64_t MINIMUM_MIXIN_V3                        =                                      2;
         const uint64_t MAXIMUM_MIXIN_V3                        =                                      2;
