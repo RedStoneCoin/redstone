@@ -6,10 +6,8 @@ on:
     types: [published]
   schedule:
     - cron: '30 3 * * 0'
-
 env:
   TAG: ${{ github.ref }}
-
 jobs:
   # Common Build matrix for builds on Ubuntu VM
   ubuntu_build:
@@ -46,7 +44,6 @@ jobs:
       LABEL: ${{ matrix.label }}
     steps:
       - uses: actions/checkout@v2
-
       # Fetch Dependencies
       - name: Dependencies
         if: matrix.build_name != 'aarch64'
@@ -61,7 +58,6 @@ jobs:
         with:
           path: .ccache
           key: ccache-${{ matrix.label }}
-
       # Configure the project with cmake
       - name: Configure
         if: matrix.build_name != 'aarch64'
@@ -93,9 +89,11 @@ jobs:
         id: before_deploy
         env:
           COMMIT_SHA: ${{ github.sha }}
+        run: 
         run: |
           if [[ "${TAG:5:4}" == "tags" ]]; then export TAG=${TAG:10}; else export TAG=${COMMIT_SHA}; fi
           cd build/src
+          TARGETS="redstone-node geminer redwallet gemservice Cryptotester redwallet-api redwallet-upgrader";
           TARGETS="redstone-node geminer redwallet gemservice Cryptotester redwallet-api redwallet-upgrader"
           if [[ "${LABEL}" != "aarch64" ]]; then strip ${TARGETS}; fi
           rm -rf redstone-${TAG} 
@@ -117,14 +115,12 @@ jobs:
           asset_path: ./build/src/${{ steps.before_deploy.outputs.file_name }}
           asset_name: ${{ steps.before_deploy.outputs.file_name }}
           asset_content_type: application/gzip
-
       # Upload to GH Actions Artifacts
       - name: Upload To GH Artifacts
         uses: actions/upload-artifact@v2
         with:
           name: ${{ steps.before_deploy.outputs.artifact_name }}
           path: ./build/src/${{ steps.before_deploy.outputs.binary_path }}
-
   # Mac builds on Catalina VM
   macos_build:
     name: macOS
@@ -136,23 +132,18 @@ jobs:
       CCACHE_DIR: $GITHUB_WORKSPACE/.ccache
     steps:
       - uses: actions/checkout@v2
-
       # Fetch Dependencies
       - name: Dependencies
         run: |
-          brew unlink cmake
           brew uninstall llvm
-          brew install --force cmake boost llvm@8 openssl
           brew install --force boost llvm@8 ccache
           brew link --force llvm@8
           ln -s /usr/local/opt/llvm@8 /usr/local/opt/llvm
-          
       - name: Retrieve ccache
         uses: actions/cache@v1
         with:
           path: .ccache
           key: ccache-osx
-
       # Configure project with cmake
       - name: Configure
         run: |
@@ -172,6 +163,7 @@ jobs:
         run: |
           if [[ "${TAG:5:4}" == "tags" ]]; then export TAG=${TAG:10}; else export TAG=${COMMIT_SHA}; fi
           cd build/src
+          TARGETS="redstone-node geminer redwallet gemservice Cryptotester redwallet-api redwallet-upgrader";
           TARGETS="redstone-node geminer redwallet gemservice Cryptotester redwallet-api redwallet-upgrader"
           strip ${TARGETS}
           rm -rf redstone-${TAG}
@@ -193,14 +185,12 @@ jobs:
           asset_path: ./build/src/${{ steps.before_deploy.outputs.file_name }}
           asset_name: ${{ steps.before_deploy.outputs.file_name }}
           asset_content_type: application/gzip
-
       # Upload to GH Actions Artifacts
       - name: Upload To GH Artifacts
         uses: actions/upload-artifact@v2
         with:
           name: ${{ steps.before_deploy.outputs.artifact_name }}
           path: ./build/src/${{ steps.before_deploy.outputs.binary_path }}
-
   # Windows Builds on Windows Server 2019
   windows_build:
     name: Windows
@@ -210,19 +200,15 @@ jobs:
       LABEL: windows
     steps:
       - uses: actions/checkout@v2
-
       - name: Setup clcache
         run: pip install clcache
-
       - name: Retrieve clcache
         uses: actions/cache@v1
         with:
           path: clcache
           key: clcache-windows
-
       - name: Install OpenSSL
         run: choco install openssl
-
       # Configure project with cmake
       - name: Configure
         run: |
@@ -264,10 +250,3 @@ jobs:
           asset_path: ./build/src/Release/${{ steps.before_deploy.outputs.file_name }}
           asset_name: ${{ steps.before_deploy.outputs.file_name }}
           asset_content_type: application/zip
-
-      # Upload to GH Actions Artifacts
-      - name: Upload To GH Artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: ${{ steps.before_deploy.outputs.artifact_name }}
-          path: ./build/src/Release/${{ steps.before_deploy.outputs.binary_path }}
