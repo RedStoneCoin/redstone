@@ -211,8 +211,9 @@ jobs:
       LABEL: windows
     steps:
       - uses: actions/checkout@v2
-      - name: Setup clcache
+      - name: Setup Boost
       - run: |
+         cmake -S . -B build -DBoost_INCLUDE_DIR=$BOOST_ROOT_1_69_0/include
          echo "::set-env name=BOOST_ROOT::$BOOST_ROOT_1_69_0"
 
 
