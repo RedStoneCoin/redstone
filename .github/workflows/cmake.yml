@@ -211,6 +211,10 @@ jobs:
       LABEL: windows
     steps:
       - uses: actions/checkout@v2
+      - name: Setup clcache
+      - run: |
+         echo "::set-env name=BOOST_ROOT::$BOOST_ROOT_1_69_0"
+
 
       - name: Setup clcache
         run: pip install clcache
