@@ -222,9 +222,9 @@ jobs:
       - name: Setup Boost
         run: |
           #cmd
-          set BOOST_ROOT=%BOOST_ROOT_1_72_0%
+          set BOOST_ROOT=%BOOST_ROOT_1_69_0%
           $powershell
-          $env:BOOST_ROOT=$env:BOOST_ROOT_1_72_0
+          $env:BOOST_ROOT=$env:BOOST_ROOT_1_69_0
 
         
         
