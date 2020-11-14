@@ -247,17 +247,11 @@ endif ()
 
 ## Go get us some static BOOST libraries
 
-set(Boost_NO_BOOST_CMAKE ON)
-set(Boost_USE_STATIC_LIBS ON)
-set(Boost_USE_STATIC_RUNTIME ON)
-set(BOOST_INCLUDE_DIR "C:/hostedtoolcache/windows/boost/1.69.0/x86_64/include/boost-1.69.0")
-set(BOOST_LIBRARY_DIR " C:/hostedtoolcache/windows/boost/1.69.0/x86_64/include/boost-1.60.0")
-set(BOOST_LIBRARY_DIR " C:/hostedtoolcache/windows/boost/1.69.0/x86_64/include/boost-1.69.0")
-FIND_PACKAGE(Boost)
-IF (Boost_FOUND)
-    INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIR})
-    ADD_DEFINITIONS( "-DHAS_BOOST" )
-ENDIF()
+find_package(Boost 1.36.0)
+if(Boost_FOUND)
+  include_directories(${Boost_INCLUDE_DIRS})
+  add_executable(foo foo.cc)
+endif()
 
 ## Let's see if we have any OpenSSL static libraries available
 set(OPENSSL_USE_STATIC_LIBS ON)
