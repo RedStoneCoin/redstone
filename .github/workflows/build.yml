@@ -204,13 +204,18 @@ jobs:
     runs-on: windows-latest
   
     env:
-      set: (Boost_USE_STATIC_LIBS ON)
-      BOOST_ROOT: "C:/Program Files/Boost/1.69.0"
-      Boost_INCLUDE_DIR: "C:/Program Files/Boost/1.69.0/include"
-      BOOST_INCLUDEDIR: "C:/Program Files/Boost/1.69.0/include"
-      Boost_LIBRARY_DIRS: "C:/Program Files/Boost/1.69.0/lib"
-      BOOST_LIBRARYDIR: "C:/Program Files/Boost/1.69.0/lib"
-      MSBUILD_PATH: "C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/MSBuild/Current/Bin"
+      set: (Boost_USE_STATIC_LIBS        ON)  # only find static libs
+      set: (Boost_USE_DEBUG_LIBS         OFF) # ignore debug libs and
+      set: (Boost_USE_RELEASE_LIBS       ON)  # only find release libs
+      set: (Boost_USE_MULTITHREADED      ON)
+      set: (Boost_USE_STATIC_RUNTIME    OFF)
+     find_package: (Boost 1.66.0 COMPONENTS date_time filesystem system ...)
+     if: (Boost_FOUND)
+  include_directories: (${Boost_INCLUDE_DIRS})
+  add_executable: (foo foo.cc)
+  target_link_libraries: (foo ${Boost_LIBRARIES})
+endif: ()
+     MSBUILD_PATH: "C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/MSBuild/Current/Bin"
       LABEL: windows
       
     steps:
