@@ -206,7 +206,7 @@ jobs:
  
       BOOST_ROOT: "C:/hostedtoolcache/windows/boost/1.69.0/x86_64/include/boost-1_69"  
       BOOST: "C:/hostedtoolcache/windows/boost/1.69.0/x86_64/include/boost-1_69"  
-      BOOST_ROOT_1_69_0: "C:/hostedtoolcache/windows/boost/1.69.0/x86_64/include/boost-1_69" :  
+      BOOST_ROOT_1_69_0: "C:/hostedtoolcache/windows/boost/1.69.0/x86_64/include/boost-1_69"  
       MSBUILD_PATH: "C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/MSBuild/Current/Bin"
       LABEL: windows
     steps:
