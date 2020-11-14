@@ -246,13 +246,17 @@ if (NOT MSVC)
 endif ()
 
 ## Go get us some static BOOST libraries
-if(DEFINED ENV{BOOST_ROOT_1_69_0})
-    file(TO_CMAKE_PATH $ENV{BOOST_ROOT_1_69_0} CMAKE_BOOST_ROOT)
-    list(APPEND BOOST_ROOT "$ENV{CMAKE_BOOST_ROOT}")
-    list(APPEND BOOST_INCLUDEDIR "$ENV{CMAKE_BOOST_ROOT}/boost/include")
-    list(APPEND BOOST_LIBRARYDIR "$ENV{CMAKE_BOOST_ROOT}/lib")
-endif()
-
+set(Boost_NO_BOOST_CMAKE ON)
+set(Boost_USE_STATIC_LIBS ON)
+set(Boost_USE_STATIC_RUNTIME ON)
+find_package(Boost REQUIRED COMPONENTS system thread date_time chrono serialization)
+message(STATUS "Boost Found: ${Boost_INCLUDE_DIRS}")
+include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
+if (APPLE)
+    set(Boost_LIBRARIES "${Boost_LIBRARIES}")
+elseif (NOT MSVC)
+    set(Boost_LIBRARIES "${Boost_LIBRARIES};rt")
+endif ()
 find_package(Boost ...)
 
 ## Let's see if we have any OpenSSL static libraries available
