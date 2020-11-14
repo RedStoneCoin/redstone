@@ -247,7 +247,7 @@ endif ()
 
 ## Go get us some static BOOST libraries
 
-find_package(Boost 1.36.0)
+find_package(Boost 1.69.0)
 if(Boost_FOUND)
   include_directories(${Boost_INCLUDE_DIRS})
   add_executable(foo foo.cc)
