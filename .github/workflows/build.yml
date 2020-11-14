@@ -202,10 +202,11 @@ jobs:
   windows_build:
     name: Windows
     runs-on: windows-latest
-    env:
-      BOOST_ROOT : "/usr/local/share/boost/1.69.0"  
-      BOOST_ROOT_1_69_0: "C:/hostedtoolcache/windows/boost/1.69.0/x86_64/include/boost-1_69_0"
-      BOOST: "C:/hostedtoolcache/windows/boost/1.69.0/x86_64/include/boost-1.69.0"
+    
+      SET: (BOOST_ROOT "$ENV{BOOST_ROOT_1_69_0}")
+      SET: (BOOST_INCLUDEDIR "$ENV{BOOST_ROOT_1_69_0}\boost\include")
+      SET: (BOOST_LIBRARYDIR "$ENV{BOOST_ROOT_1_69_0}\lib")
+      
 
       MSBUILD_PATH: "C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/MSBuild/Current/Bin"
       $Env: path += ";${env:BOOST_ROOT_1_69_0}\lib"
