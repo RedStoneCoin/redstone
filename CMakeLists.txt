@@ -246,18 +246,10 @@ if (NOT MSVC)
 endif ()
 
 ## Go get us some static BOOST libraries
-set(Boost_NO_BOOST_CMAKE ON)
-set(Boost_USE_STATIC_LIBS ON)
-set(Boost_USE_STATIC_RUNTIME ON)
-find_package(Boost REQUIRED COMPONENTS system thread date_time chrono serialization)
-message(STATUS "Boost Found: ${Boost_INCLUDE_DIRS}")
-include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
-if (APPLE)
-    set(Boost_LIBRARIES "${Boost_LIBRARIES}")
-elseif (NOT MSVC)
-    set(Boost_LIBRARIES "${Boost_LIBRARIES};rt")
-endif ()
-find_package(Boost ...)
+
+      BOOST_ROOT: "C:/hostedtoolcache/windows/boost/1.69.0/x86_64/include/boost-1_69"  
+      BOOST: "C:/hostedtoolcache/windows/boost/1.69.0/x86_64/include/boost-1_69"  
+      BOOST_ROOT_1_69_0: "C:/hostedtoolcache/windows/boost/1.69.0/x86_64/include/boost-1_69"  
 
 ## Let's see if we have any OpenSSL static libraries available
 set(OPENSSL_USE_STATIC_LIBS ON)
