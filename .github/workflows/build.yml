@@ -202,13 +202,14 @@ jobs:
   windows_build:
     name: Windows
     runs-on: windows-latest
+  
     env:
       set: (Boost_USE_STATIC_LIBS ON)
-      BOOST_ROOT: "C:/hostedtoolcache/windows/boost/1.69.0"
-      Boost_INCLUDE_DIR: "C:/hostedtoolcache/windows/boost/1.69.0/include"
-      BOOST_INCLUDEDIR: "C:/hostedtoolcache/windows/boost/1.69.0/include"
-      Boost_LIBRARY_DIRS: "C:/hostedtoolcache/windows/boost/1.69.0/lib"
-      BOOST_LIBRARYDIR: "C:/hostedtoolcache/windows/boost/1.69.0/lib"
+      BOOST_ROOT: "C:/Program Files/Boost/1.69.0"
+      Boost_INCLUDE_DIR: "C:/Program Files/Boost/1.69.0/include"
+      BOOST_INCLUDEDIR: "C:/Program Files/Boost/1.69.0/include"
+      Boost_LIBRARY_DIRS: "C:/Program Files/Boost/1.69.0/lib"
+      BOOST_LIBRARYDIR: "C:/Program Files/Boost/1.69.0/lib"
       MSBUILD_PATH: "C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/MSBuild/Current/Bin"
       LABEL: windows
       
