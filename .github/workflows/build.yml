@@ -204,9 +204,7 @@ jobs:
     runs-on: windows-latest
     env:
       
-      BOOST_INCLUDEDIR: "C:/hostedtoolcache/windows/boost/1.69.0/include"  
-      BOOST_LIBRARYDIR: "C:/hostedtoolcache/windows/boost/1.69.0/lib"  
-      BOOST_ROOT_1_69_0: "C:/hostedtoolcache/windows/boost/1.69.0"  
+      Boost_INCLUDE_DIR: "C:/hostedtoolcache/windows/boost/1.69.0"   
       MSBUILD_PATH: "C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/MSBuild/Current/Bin"
       LABEL: windows
       
