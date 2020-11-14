@@ -215,6 +215,15 @@ jobs:
       
     steps:
       - uses: actions/checkout@v2
+      - name: Boost setup
+        run:
+            $url = "https://github.com/actions/boost-versions/releases/download/1.69.0-20200608.1/boost-1.69.0-win32-msvc14.1-x86_64.tar.gz"
+            (New-Object System.Net.WebClient).DownloadFile($url, "$($env:TEMP)\boost.tar.gz")
+            7z.exe x "$($env:TEMP)\boost.tar.gz" -o"$($env:TEMP)" -y | Out-Null
+            $tarPath = Get-ChildItem -Path "$($env:TEMP)" -Filter "boost-*.tar" | Select-Object -First 1
+            7z.exe x $tarPath -o"$($env:TEMP)/boost" -y | Out-Null
+            Push-Location -Path "$($env:TEMP)\boost"
+            Invoke-Expression .\setup.ps1  
 
       - name: Setup clcache
         run: pip install clcache
