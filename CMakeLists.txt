@@ -247,8 +247,8 @@ endif ()
 
 ## Go get us some static BOOST libraries
 set (BOOST_ROOT "$ENV{BOOST_ROOT_1_69_0}")
-set (BOOST_INCLUDEDIR "$ENV{BOOST_ROOT_1_69_0}\boost\include")
-set (BOOST_LIBRARYDIR "$ENV{BOOST_ROOT_1_69_0}\lib")
+set (BOOST_INCLUDEDIR "$ENV{BOOST_ROOT_1_69_0}/boost/include")
+set (BOOST_LIBRARYDIR "$ENV{BOOST_ROOT_1_69_0}/lib")
 find_package(Boost REQUIRED COMPONENTS system thread date_time chrono serialization)
 message(STATUS "Boost Found: ${Boost_INCLUDE_DIRS}")
 include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
