@@ -213,9 +213,11 @@ jobs:
     steps:
       
       - uses: actions/checkout@v2
+        
       - name: Setup Boost
         run: |
-          echo $BOOST_ROOT
+          echo "::set-env name=BOOST_ROOT_LATEST::$env:BOOST_ROOT_1_69_0"
+          $env:BOOST_ROOT_LATEST
         
         
         
