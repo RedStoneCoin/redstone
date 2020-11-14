@@ -203,21 +203,11 @@ jobs:
     name: Windows
     runs-on: windows-latest
     env:
- 
-      BOOST_ROOT: "C:/hostedtoolcache/windows/boost/1.69.0/x86_64/include/boost-1_69"  
-      BOOST: "C:/hostedtoolcache/windows/boost/1.69.0/x86_64/include/boost-1_69"  
-      BOOST_ROOT_1_69_0: "C:/hostedtoolcache/windows/boost/1.69.0/x86_64/include/boost-1_69" :  
       MSBUILD_PATH: "C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/MSBuild/Current/Bin"
       LABEL: windows
+      
     steps:
       - uses: actions/checkout@v2
-      - name: Setup Boost
-      - run: |
-         cmake -S . -B build -DBoost_INCLUDE_DIR=$BOOST_ROOT_1_69_0/include
-         echo "::set-env name=BOOST_ROOT::$BOOST_ROOT_1_69_0"
-        
-        
-        
 
       - name: Setup clcache
         run: pip install clcache
@@ -237,7 +227,8 @@ jobs:
           mkdir build
           cd build
           cmake -G "Visual Studio 16 2019" -A x64 .. -DARCH=default -DBOOST_ROOT="$env:BOOST_ROOT_1_69_0"
-      # Build for Windows
+     
+     # Build for Windows
       - name: Build
         run: |
           $env:CLCACHE_DIR = "$env:GITHUB_WORKSPACE\clcache"
