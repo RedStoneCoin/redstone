@@ -279,7 +279,7 @@ namespace CryptoNote
 //needed to change port on seed nodes defouth
     const char *const SEED_NODES[] = {
         //"164.90.212.80:44404"
-        //"99.248.224.55:44404" //leo
+          "178.236.85.196:44401" //leo
           "46.101.195.41:44401", //telecar   // Leo, (helives.mine2.live)// Leo, (helives.mine2.live) new toni do seednode
     };
 } // namespace CryptoNote
