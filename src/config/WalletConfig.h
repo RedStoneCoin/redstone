@@ -53,7 +53,7 @@ namespace WalletConfig
     const uint16_t integratedAddressLength = standardAddressLength + ((64 * 11) / 8);
 
     /* The default fee value to use with transactions (in ATOMIC units!) */
-    const uint64_t defaultFee = 50;
+    const uint64_t defaultFee = 500;
 
     /* The minimum fee value to allow with transactions (in ATOMIC units!) */
     const uint64_t minimumFee = 1;
