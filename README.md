@@ -1,5 +1,6 @@
 # RedStone
-(https://img.shields.io/github/downloads/turtlecoin/turtlecoin/total?label=Downloads)](http://latest.turtlecoin.lol) [![GitHub contributors](https://img.shields.io/github/contributors-anon/Redstonecoin/redstone?label=Contributors)](https://github.com/turtlecoin/turtlecoin/graphs/contributors) [![GitHub issues](https://img.shields.io/github/issues/Redstonecoin/redstone?label=Issues)](https://github.com/RedStoneCoin/redstone/issues) ![GitHub stars](https://img.shields.io/github/stars/Redstonecoin/redstone?label=Github%20Stars)
+
+[![GitHub contributors](https://img.shields.io/github/contributors-anon/Redstonecoin/redstone?label=Contributors)](https://github.com/Redstonecoin/redstone/graphs/contributors) [![GitHub issues](https://img.shields.io/github/issues/Redstonecoin/redstone?label=Issues)](https://github.com/RedStoneCoin/redstone/issues) ![GitHub stars](https://img.shields.io/github/stars/Redstonecoin/redstone?label=Github%20Stars)
 
 This is official main repo
 RedStones is the  cryptocurrency. Rarity, privacy and a finite supply.
