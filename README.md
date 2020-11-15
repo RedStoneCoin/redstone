@@ -1,5 +1,5 @@
 # RedStone
-
+<iframe src="https://discord.com/widget?id=694980024956092447&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 [![Discord](https://img.shields.io/discord/388915017187328002?label=Redstone%20Discord)](https://discord.gg/JjThnVdASR)
 [![GitHub contributors](https://img.shields.io/github/contributors-anon/Redstonecoin/redstone?label=Contributors)](https://github.com/Redstonecoin/redstone/graphs/contributors) [![GitHub issues](https://img.shields.io/github/issues/Redstonecoin/redstone?label=Issues)](https://github.com/RedStoneCoin/redstone/issues) ![GitHub stars](https://img.shields.io/github/stars/Redstonecoin/redstone?label=Github%20Stars)
 
