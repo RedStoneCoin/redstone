@@ -65,7 +65,7 @@ namespace CryptoNote
         const size_t   CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE            =                                       600;
 
         const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT                  =                                         6;
-                const uint64_t MINIMUM_FEE                                       =                             UINT64_C(499); // "basicly" feeless
+        const uint64_t MINIMUM_FEE                                       =                             UINT64_C(499); // "basicly" feeless
         /* This section defines our minimum and maximum mixin counts required for transactions */
         const uint64_t MINIMUM_MIXIN_V1                        =                                      0;
         const uint64_t MAXIMUM_MIXIN_V1                        =                                    100;
