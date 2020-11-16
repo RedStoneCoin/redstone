@@ -7,7 +7,7 @@
 [![GitHub contributors](https://img.shields.io/github/contributors-anon/Redstonecoin/redstone?label=Contributors)](https://github.com/Redstonecoin/redstone/graphs/contributors) [![GitHub issues](https://img.shields.io/github/issues/Redstonecoin/redstone?label=Issues)](https://github.com/RedStoneCoin/redstone/issues) ![GitHub stars](https://img.shields.io/github/stars/Redstonecoin/redstone?label=Github%20Stars)
 
 
-![Alt Text](https://github.com/RedStoneCoin/redstone/blob/development/RS512.gif)
+
 This is official main repo
 RedStones is the  cryptocurrency. Rarity, privacy and a finite supply.
 
@@ -222,4 +222,5 @@ Rioda, Puip, Lemoe ,The Don ,Reborn ,Paul Bismuth ,Leo Cornelius(Also dev):) ,Te
 By downloading you agree on our eula
 ```
 
+![Alt Text](https://github.com/RedStoneCoin/redstone/blob/development/RS512.gif)
 © RedStone 2020. All Rights Reserved.
