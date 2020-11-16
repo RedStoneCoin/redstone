@@ -1,4 +1,4 @@
-# RedStone
+#                                        RedStone
 ![Alt Text](https://github.com/RedStoneCoin/redstone/blob/development/RS512.gif)
 
 
