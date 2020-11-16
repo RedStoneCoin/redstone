@@ -65,27 +65,22 @@ namespace CryptoNote
         const size_t   CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE            =                                       600;
 
         const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT                  =                                         6;
-        const uint64_t MINIMUM_FEE                                       =                             UINT64_C(499); // "basicly" feeless
+                const uint64_t MINIMUM_FEE                                       =                             UINT64_C(499); // "basicly" feeless
         /* This section defines our minimum and maximum mixin counts required for transactions */
         const uint64_t MINIMUM_MIXIN_V1                        =                                      0;
-        const uint64_t MAXIMUM_MIXIN_V1                        =                                      1;
-
+        const uint64_t MAXIMUM_MIXIN_V1                        =                                    100;
         const uint64_t MINIMUM_MIXIN_V2                        =                                      0;
-        const uint64_t MAXIMUM_MIXIN_V2                        =                                    ¸ 1;
-
-        const uint64_t MINIMUM_MIXIN_V3                        =                                      0;
-        const uint64_t MAXIMUM_MIXIN_V3                        =                                      1;
-
-        /* The heights to activate the mixin limits at */
+        const uint64_t MAXIMUM_MIXIN_V2                        =                                    100;
+        const uint64_t MINIMUM_MIXIN_V2                        =                                      0;
+        const uint64_t MAXIMUM_MIXIN_V2                        =                                    100;
         const uint32_t MIXIN_LIMITS_V1_HEIGHT                  =                                 5;
         const uint32_t MIXIN_LIMITS_V2_HEIGHT                  =                                200'000;
         const uint32_t MIXIN_LIMITS_V3_HEIGHT                  =                                500'000;
 
-        const uint64_t DEFAULT_MIXIN_V0                        =                                       1;
-        const uint64_t DEFAULT_MIXIN_V1                        =                                       1;
-        const uint64_t DEFAULT_MIXIN_V2                        =                                       1;
-        const uint64_t DEFAULT_MIXIN_V3                        =                                       1;
-
+        const uint64_t DEFAULT_MIXIN_V0                        =                                     100;
+        const uint64_t DEFAULT_MIXIN_V1                        =                                     100;
+        const uint64_t DEFAULT_MIXIN_V2                        =                                     100;
+        const uint64_t DEFAULT_MIXIN_V3                        =                                     100;
         const uint64_t DEFAULT_DUST_THRESHOLD                  =                          UINT64_C(100);
         const uint64_t DEFAULT_DUST_THRESHOLD_V2               =                            UINT64_C(0);
 
