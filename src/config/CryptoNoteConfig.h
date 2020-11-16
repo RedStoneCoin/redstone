@@ -65,22 +65,27 @@ namespace CryptoNote
         const size_t   CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE            =                                       600;
 
         const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT                  =                                         6;
-        const uint64_t MINIMUM_FEE                                       =                             UINT64_C(499); // "basicly" feeless
+        const uint64_t MINIMUM_FEE                                       =                             UINT64_C(1); // "basicly" feeless
         /* This section defines our minimum and maximum mixin counts required for transactions */
         const uint64_t MINIMUM_MIXIN_V1                        =                                      0;
-        const uint64_t MAXIMUM_MIXIN_V1                        =                                    100;
+        const uint64_t MAXIMUM_MIXIN_V1                        =                                     10;
+
         const uint64_t MINIMUM_MIXIN_V2                        =                                      0;
-        const uint64_t MAXIMUM_MIXIN_V2                        =                                    100;
-        const uint64_t MINIMUM_MIXIN_V2                        =                                      0;
-        const uint64_t MAXIMUM_MIXIN_V2                        =                                    100;
+        const uint64_t MAXIMUM_MIXIN_V2                        =                                      5;
+
+        const uint64_t MINIMUM_MIXIN_V3                        =                                      2;
+        const uint64_t MAXIMUM_MIXIN_V3                        =                                      2;
+
+        /* The heights to activate the mixin limits at */
         const uint32_t MIXIN_LIMITS_V1_HEIGHT                  =                                 5;
         const uint32_t MIXIN_LIMITS_V2_HEIGHT                  =                                200'000;
         const uint32_t MIXIN_LIMITS_V3_HEIGHT                  =                                500'000;
 
-        const uint64_t DEFAULT_MIXIN_V0                        =                                     100;
-        const uint64_t DEFAULT_MIXIN_V1                        =                                     100;
-        const uint64_t DEFAULT_MIXIN_V2                        =                                     100;
-        const uint64_t DEFAULT_MIXIN_V3                        =                                     100;
+        const uint64_t DEFAULT_MIXIN_V0                        =                                      1;
+        const uint64_t DEFAULT_MIXIN_V1                        =                                      1;
+        const uint64_t DEFAULT_MIXIN_V2                        =                                      3;
+        const uint64_t DEFAULT_MIXIN_V3                        =                                      2;
+
         const uint64_t DEFAULT_DUST_THRESHOLD                  =                          UINT64_C(100);
         const uint64_t DEFAULT_DUST_THRESHOLD_V2               =                            UINT64_C(0);
 
@@ -177,7 +182,6 @@ namespace CryptoNote
         /* The index in the FORK_HEIGHTS array that this version of the software will
            support. For example, if CURRENT_FORK_INDEX is 3, this version of the
            software will support the fork at 600,000 blocks.
-
            This will default to zero if the FORK_HEIGHTS array is empty, so you don't
            need to change it manually. */
         const uint8_t CURRENT_FORK_INDEX                 =  FORK_HEIGHTS_SIZE == 0 ? 0 : SOFTWARE_SUPPORTED_FORK_INDEX;
@@ -271,7 +275,7 @@ namespace CryptoNote
             0x7a, 0x4f, 0xed, 0xa6, 0x77, 0xf2, 0xab, 0x9a, 0x7e, 0x3b, 0xb3, 0xa8, 0xe8, 0xa1, 0xc4, 0xf7
         }
     };
-//needed to change port on seed nodes defouth
+
     const char *const SEED_NODES[] = {
           "161.97.90.8:44401",
           "178.236.85.196:44401", //leo
