@@ -20,7 +20,7 @@ https://fairdrop.io/
 
 We offer binary images of the latest releases [here](https://github.com/RedStoneCoin/redstone/releases/latest)
 
-If you would like to compile yourself, read on.
+ If you would like to compile yourself, read on.
 
 ## How To Compile
 If you have a multi thread pc (eg not 20 years old) 
