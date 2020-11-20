@@ -28,10 +28,10 @@ namespace CryptoNote
         static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
         // end obsoulte
         const uint32_t CRYPTONOTE_MAX_BLOCK_NUMBER              =                    1'000'000'000;
-        const size_t   CRYPTONOTE_MAX_BLOCK_BLOB_SIZE           =                      1'000'000'000;
+        const size_t   CRYPTONOTE_MAX_BLOCK_BLOB_SIZE           =                    1'000'000'000;
         const size_t   CRYPTONOTE_MAX_TX_SIZE                   =                      500'000'000;
-        const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX  =                           0x95;
-        const uint32_t CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW     =                               1;
+        const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX  =                             0x95;
+        const uint32_t CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW     =                                1;
         const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT       =                      60 * 60 * 2;
         const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT_V3    =            3 * DIFFICULTY_TARGET;
         const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT_V4    =            6 * DIFFICULTY_TARGET;
@@ -39,7 +39,7 @@ namespace CryptoNote
         const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW_V3     =                               11;
 
         const uint32_t ZAWY_DIFFICULTY_BLOCK_INDEX              =                            1'000;
-        const size_t   ZAWY_DIFFICULTY_V2                       =                             1000;
+        const size_t   ZAWY_DIFFICULTY_V2                       =                                0;
         const uint8_t  ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION =                                3;
 
         const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX            =                          100'000;
@@ -240,15 +240,15 @@ namespace CryptoNote
 
     // P2P Network Configuration Section - This defines our current P2P network version
     // and the minimum version for communication between nodes
-    const uint8_t  P2P_CURRENT_VERSION                       =                2;
-    const uint8_t  P2P_MINIMUM_VERSION                       =                2;
+    const uint8_t  P2P_CURRENT_VERSION                       =                3;
+    const uint8_t  P2P_MINIMUM_VERSION                       =                3;
 
     // This defines the minimum P2P version required for lite blocks propogation
     const uint8_t  P2P_LITE_BLOCKS_PROPOGATION_VERSION       =                1;
 
     // This defines the number of versions ahead we must see peers before we start displaying
     // warning messages that we need to upgrade our software.
-    const uint8_t  P2P_UPGRADE_WINDOW                        =                1;
+    const uint8_t  P2P_UPGRADE_WINDOW                        =                2;
     const size_t   P2P_CONNECTION_MAX_WRITE_BUFFER_SIZE      = 32 * 1024 * 1024; // 32 MB
     const uint32_t P2P_DEFAULT_CONNECTIONS_COUNT             =                8;
     const size_t   P2P_DEFAULT_WHITELIST_CONNECTIONS_PERCENT =               70;
