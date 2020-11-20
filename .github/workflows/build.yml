@@ -125,82 +125,60 @@ jobs:
           name: ${{ steps.before_deploy.outputs.artifact_name }}
           path: ./build/src/${{ steps.before_deploy.outputs.binary_path }}
 
-  
-  # Windows Builds on Windows Server 2019
-  windows_build:
-    name: Windows
-    runs-on: windows-latest
-  
+  # Mac builds on Catalina VM
+  macos_build:
+    name: macOS
+    runs-on: macos-latest
     env:
-      
-      BOOST_ROOT: "C:/Program Files/Boost/1.69.0"
-      Boost_INCLUDE_DIR: "C:/Program Files/Boost/1.69.0/include"
-      BOOST_INCLUDEDIR: "C:/Program Files/Boost/1.69.0/include"
-      Boost_LIBRARY_DIRS: "C:/Program Files/Boost/1.69.0/lib"
-      BOOST_LIBRARYDIR: "C:/Program Files/Boost/1.69.0/lib"
-      MSBUILD_PATH: "C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/MSBuild/Current/Bin"
-      LABEL: windows
-      
+      CC: /usr/local/opt/llvm@8/bin/clang
+      CXX: /usr/local/opt/llvm@8/bin/clang++
+      LABEL: osx
+      CCACHE_DIR: $GITHUB_WORKSPACE/.ccache
     steps:
       - uses: actions/checkout@v2
-      - name: Boost
+
+      # Fetch Dependencies
+      - name: Dependencies
         run: |
-          $url = "https://github.com/actions/boost-versions/releases/download/1.69.0-20200608.1/boost-1.69.0-win32-msvc14.1-x86_64.tar.gz"
-          (New-Object System.Net.WebClient).DownloadFile($url, "$($env:TEMP)\boost.tar.gz")
-          7z.exe x "$($env:TEMP)\boost.tar.gz" -o"$($env:TEMP)" -y | Out-Null
-          $tarPath = Get-ChildItem -Path "$($env:TEMP)" -Filter "boost-*.tar" | Select-Object -First 1
-          7z.exe x $tarPath -o"$($env:TEMP)/boost" -y | Out-Null
-          Push-Location -Path "$($env:TEMP)\boost"
-          Invoke-Expression .\setup.ps1
-          "BOOST_ROOT_1_69_0=C:\hostedtoolcache\windows\Boost\1.69.0\x86_64" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
-
-
-
-      
-
-      - name: Setup clcache
-        run: pip install clcache
-
-      - name: Retrieve clcache
+          brew uninstall llvm
+          brew install --force boost llvm@8 ccache
+          brew link --force llvm@8
+          ln -s /usr/local/opt/llvm@8 /usr/local/opt/llvm
+      - name: Retrieve ccache
         uses: actions/cache@v1
         with:
-          path: clcache
-          key: clcache-windows
-
-      - name: Install OpenSSL
-        run: choco install openssl
+          path: .ccache
+          key: ccache-osx
 
       # Configure project with cmake
       - name: Configure
         run: |
-          mkdir build
-          cd build
-          cmake -G "Visual Studio 16 2019" -A x64 .. -DARCH=default -DBOOST_ROOT="$env:BOOST_ROOT_1_69_0"
-     
-     # Build for Windows
+          mkdir build && cd build
+          cmake -DARCH=default -DCMAKE_BUILD_TYPE=Release -DSTATIC=true ..
+      # Build for macOS
       - name: Build
         run: |
-          $env:CLCACHE_DIR = "$env:GITHUB_WORKSPACE\clcache"
-          $env:PATH = "$env:PATH;$env:MSBUILD_PATH"
           cd build
-          MSBuild redstone.sln /p:CLToolExe=clcache.exe /p:Configuration=Release /p:PlatformToolset=v141 /m
+          make -j2
+      
       # Prepare for deploy
       - name: Prepare for Deploy
-        shell: bash
         id: before_deploy
         env:
           COMMIT_SHA: ${{ github.sha }}
         run: |
           if [[ "${TAG:5:4}" == "tags" ]]; then export TAG=${TAG:10}; else export TAG=${COMMIT_SHA}; fi
-          cd build/src/Release
+          cd build/src
+          TARGETS="redstone-node geminer redwallet gemservice Cryptotester redwallet-api redwallet-upgrader"
+          strip ${TARGETS}
           rm -rf redstone-${TAG}
           mkdir redstone-${TAG}
-          cp *.exe redstone-${TAG}/
-          cp ../../../LICENSE redstone-${TAG}/
-          7z a redstone-${LABEL}-${TAG}.zip redstone-${TAG}/
+          cp ${TARGETS} redstone-${TAG}/
+          cp ../../LICENSE redstone-${TAG}/
+          tar cvfz redstone-${LABEL}-${TAG}.tar.gz redstone-${TAG}/
           echo ::set-output name=binary_path::redstone-${TAG}
           echo ::set-output name=artifact_name::redstone-${LABEL}-${TAG}
-          echo ::set-output name=file_name::redstone-${LABEL}-${TAG}.zip
+          echo ::set-output name=file_name::redstone-${LABEL}-${TAG}.tar.gz
       # Upload to GH Release
       - name: Upload to GH Release
         if: github.event_name == 'release'
@@ -209,13 +187,17 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./build/src/Release/${{ steps.before_deploy.outputs.file_name }}
+          asset_path: ./build/src/${{ steps.before_deploy.outputs.file_name }}
           asset_name: ${{ steps.before_deploy.outputs.file_name }}
-          asset_content_type: application/zip
+          asset_content_type: application/gzip
 
       # Upload to GH Actions Artifacts
       - name: Upload To GH Artifacts
         uses: actions/upload-artifact@v2
         with:
+          name: ${{ steps.before_deploy.outputs.artifact_name }}
+          path: ./build/src/${{ steps.before_deploy.outputs.binary_path }}
+
+
           name: ${{ steps.before_deploy.outputs.artifact_name }}
           path: ./build/src/Release/${{ steps.before_deploy.outputs.binary_path }}
