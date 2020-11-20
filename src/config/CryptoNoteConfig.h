@@ -267,8 +267,8 @@ namespace CryptoNote
     const uint32_t DATABASE_DEFAULT_MAX_OPEN_FILES           =              125; // 125 files
     const uint16_t DATABASE_DEFAULT_BACKGROUND_THREADS_COUNT =                4; // 4 DB threads
 
-    const char        LATEST_VERSION_URL[] =     "https:/red-stone.me";
-    const std::string LICENSE_URL          =     "https:/red-stone.me";
+    const char        LATEST_VERSION_URL[] =     "https://github.com/RedStoneCoin/redstone/";
+    const std::string LICENSE_URL          =     "https://github.com/RedStoneCoin/redstone/";
 
     const static boost::uuids::uuid CRYPTONOTE_NETWORK = {
         {
