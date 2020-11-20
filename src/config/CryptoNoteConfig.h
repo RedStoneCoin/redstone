@@ -39,7 +39,7 @@ namespace CryptoNote
         const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW_V3     =                               11;
 
         const uint32_t ZAWY_DIFFICULTY_BLOCK_INDEX              =                            1'000;
-        const size_t   ZAWY_DIFFICULTY_V2                       =                                0;
+        const size_t   ZAWY_DIFFICULTY_V2                       =                                3;
         const uint8_t  ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION =                                3;
 
         const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX            =                          100'000;
