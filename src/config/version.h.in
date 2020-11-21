@@ -5,11 +5,11 @@
 #define PROJECT_SITE "https://github.com/RedStoneCoin/redstone"
 #define PROJECT_COPYRIGHT "Copyright 2020, The RedStone Developers"
 #define APP_VER_MAJOR 3
-#define APP_VER_MINOR 3
-#define APP_VER_REV 3
-#define APP_VER_BUILD 3
+#define APP_VER_MINOR 1
+#define APP_VER_REV 1
+#define APP_VER_BUILD 4
 
-#define BUILD_COMMIT_ID "3.1"//Change it
+#define BUILD_COMMIT_ID "@VERSION@"
 #define PROJECT_VERSION STR(APP_VER_MAJOR) "." STR(APP_VER_MINOR) "." STR(APP_VER_REV)
 #define PROJECT_VERSION_BUILD_NO STR(APP_VER_BUILD)
 #define PROJECT_VERSION_LONG PROJECT_VERSION "." PROJECT_VERSION_BUILD_NO
