@@ -277,6 +277,7 @@ namespace CryptoNote
     };
 
     const char *const SEED_NODES[] = {
+          "188.227.106.31:44401", // server qurteal guy
           "161.97.90.8:44401",
           "178.236.85.196:44401", //leo
           "34.107.89.18:44401", //telecar   // Leo, (helives.mine2.live)// Leo, (helives.mine2.live) new toni do seednode
