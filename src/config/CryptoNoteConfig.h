@@ -240,15 +240,15 @@ namespace CryptoNote
 
     // P2P Network Configuration Section - This defines our current P2P network version
     // and the minimum version for communication between nodes
-    const uint8_t  P2P_CURRENT_VERSION                       =                4;
-    const uint8_t  P2P_MINIMUM_VERSION                       =                4;
+    const uint8_t  P2P_CURRENT_VERSION                       =                3;
+    const uint8_t  P2P_MINIMUM_VERSION                       =                3;
 
     // This defines the minimum P2P version required for lite blocks propogation
     const uint8_t  P2P_LITE_BLOCKS_PROPOGATION_VERSION       =                1;
 
     // This defines the number of versions ahead we must see peers before we start displaying
     // warning messages that we need to upgrade our software.
-    const uint8_t  P2P_UPGRADE_WINDOW                        =                3;
+    const uint8_t  P2P_UPGRADE_WINDOW                        =                2;
     const size_t   P2P_CONNECTION_MAX_WRITE_BUFFER_SIZE      = 32 * 1024 * 1024; // 32 MB
     const uint32_t P2P_DEFAULT_CONNECTIONS_COUNT             =                8;
     const size_t   P2P_DEFAULT_WHITELIST_CONNECTIONS_PERCENT =               70;
