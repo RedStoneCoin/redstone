@@ -567,7 +567,7 @@ namespace CryptoNote
         assert(length <= c_difficultyWindow);
         if (length <= 1)
         {
-            return 1000;
+            return 1;
         }
 
         sort(timestamps.begin(), timestamps.end());
@@ -598,7 +598,7 @@ namespace CryptoNote
         low = mul128(totalWork, m_difficultyTarget, &high);
         if (high != 0 || std::numeric_limits<uint64_t>::max() - low < (timeSpan - 1))
         {
-            return 1000;
+            return 0;
         }
 
         uint8_t c_zawyDifficultyBlockVersion = m_zawyDifficultyBlockVersion;
@@ -610,7 +610,7 @@ namespace CryptoNote
         {
             if (high != 0)
             {
-                return 1000;
+                return 0;
             }
             uint64_t nextDiffZ = low / timeSpan;
 
@@ -621,7 +621,7 @@ namespace CryptoNote
         {
             if (high != 0)
             {
-                return 1000;
+                return 0;
             }
 
             /*
