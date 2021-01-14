@@ -20,10 +20,10 @@ namespace CryptoNote
 {
     namespace parameters
     {
-        const uint64_t DIFFICULTY_TARGET                        =                               20; // seconds
+        const uint64_t DIFFICULTY_TARGET                        =                               30; // seconds
 
         // Infinite supply, following is obsolute
-        const uint64_t MONEY_SUPPLY                             = UINT64_C(10'000'000'000'000'000);
+        const uint64_t MONEY_SUPPLY                             = UINT64_C(10'000'000);
         const unsigned EMISSION_SPEED_FACTOR                    =                               25;
         static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
         // end obsoulte
@@ -230,8 +230,8 @@ namespace CryptoNote
     //Need to change ports here i will put soemthing 
     //Seednode not working i that why im changeing ports
 
-    const int      P2P_DEFAULT_PORT                          =            44401; //9090 new port 44404
-    const int      RPC_DEFAULT_PORT                          =            44402; //9999 new port 44403
+    const int      P2P_DEFAULT_PORT                          =            44407; //9090 new port 44404
+    const int      RPC_DEFAULT_PORT                          =            44408; //9999 new port 44403
                                                                               
     const int      SERVICE_DEFAULT_PORT                      =             1010;
 
@@ -240,8 +240,8 @@ namespace CryptoNote
 
     // P2P Network Configuration Section - This defines our current P2P network version
     // and the minimum version for communication between nodes
-    const uint8_t  P2P_CURRENT_VERSION                       =                3;
-    const uint8_t  P2P_MINIMUM_VERSION                       =                3;
+    const uint8_t  P2P_CURRENT_VERSION                       =                4;
+    const uint8_t  P2P_MINIMUM_VERSION                       =                4;
 
     // This defines the minimum P2P version required for lite blocks propogation
     const uint8_t  P2P_LITE_BLOCKS_PROPOGATION_VERSION       =                1;
@@ -277,8 +277,7 @@ namespace CryptoNote
     };
 
     const char *const SEED_NODES[] = {
-          "188.227.106.31:44401", // server qurteal guy
-          "178.236.85.196:44401", //leo
-          "34.107.89.18:44401", //telecar   // Leo, (helives.mine2.live)// Leo, (helives.mine2.live) new toni do seednode
+          "188.227.106.31:44407" // server qurteal guy
+          
     };
 } // namespace CryptoNote
