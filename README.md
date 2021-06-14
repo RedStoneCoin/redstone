@@ -1,4 +1,4 @@
-#                                        RedStone THIS REPO WILL NOT BE RAINTEN 
+#                      REDSTONE CRYPTONOTE WILL NOT BE MAINTAINED ANY MORE!!!
 
 
 
