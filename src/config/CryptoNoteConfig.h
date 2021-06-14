@@ -47,7 +47,7 @@ namespace CryptoNote
         const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX_V3         =                          500'000;
 
 
-        const uint64_t GENESIS_BLOCK_REWARD                     =         UINT64_C(250000000000); // Premine = 5000000;
+        const uint64_t GENESIS_BLOCK_REWARD                     =         UINT64_C(0); // Premine = 0
 
         const char GENESIS_COINBASE_TX_HEX[] = "010101ff00018090cad2c60e02da29990611ca5b1a4e88013ee5b2c88899eb913ed6d8d38ff6fec81ca4aba11f21014c1fab22118356311460ce4ab58fadbfde18bb094b8f1a0b2514c67c389cc540";
 
@@ -67,14 +67,14 @@ namespace CryptoNote
         const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT                  =                                         6;
         const uint64_t MINIMUM_FEE                                       =                             UINT64_C(500); // "basicly" feeless
         /* This section defines our minimum and maximum mixin counts required for transactions */
-        const uint64_t MINIMUM_MIXIN_V1                        =                                      0;
-        const uint64_t MAXIMUM_MIXIN_V1                        =                                     10;
+        const uint64_t MINIMUM_MIXIN_V1                        =                                      3;
+        const uint64_t MAXIMUM_MIXIN_V1                        =                                      3;
         
-        const uint64_t MINIMUM_MIXIN_V2                        =                                      0;
-        const uint64_t MAXIMUM_MIXIN_V2                        =                                      5;
+        const uint64_t MINIMUM_MIXIN_V2                        =                                      3;
+        const uint64_t MAXIMUM_MIXIN_V2                        =                                      3;
 
-        const uint64_t MINIMUM_MIXIN_V3                        =                                      0;
-        const uint64_t MAXIMUM_MIXIN_V3                        =                                      2;
+        const uint64_t MINIMUM_MIXIN_V3                        =                                      3;
+        const uint64_t MAXIMUM_MIXIN_V3                        =                                      3;
 
         /* The heights to activate the mixin limits at */
         const uint32_t MIXIN_LIMITS_V1_HEIGHT                  =                                      5;
@@ -277,7 +277,7 @@ namespace CryptoNote
     };
 
     const char *const SEED_NODES[] = {
-          "188.227.106.31:44407" // server qurteal guy
+          "0.0.0.0:44407" // server qurteal guy
           
     };
 } // namespace CryptoNote
