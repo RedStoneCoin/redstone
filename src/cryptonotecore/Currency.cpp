@@ -191,7 +191,11 @@ namespace CryptoNote
     {
         
         uint64_t baseReward = 500000; // (0.5 RS) 
-
+        if (alreadyGeneratedCoins >= 500000 * 50000) { // block 215000
+            baseReward = 0;
+            logger(TRACE) << "(END OF LIFE) Block reward " << reward;
+            return true;
+        }
         logger(TRACE) << "Base reward " << baseReward;
 
         if (alreadyGeneratedCoins == 0 && m_genesisBlockReward != 0) {
